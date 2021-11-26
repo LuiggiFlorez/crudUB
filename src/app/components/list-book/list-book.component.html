@@ -1,0 +1,39 @@
+<div class="row mt-3">
+    <div class="col-lg-6">
+        <h3>List of Books</h3>
+    </div>
+    <div class="col-lg-6">
+        <button class="btn btn-primary float-end" routerLink="/add">New Book</button>
+    </div>
+</div>
+
+<table *ngIf="listBooks.length > 0" class="table table-hover mt-3">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Title</td>
+            <td>Author</td>
+            <td>NumberOfPages</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of listBooks">  
+            <td>
+                <a [routerLink]="['/see', book.Id]">{{ book.Id }}</a>
+            </td>
+            <td>{{ book.Title}}</td>
+            <td>{{ book.Author }}</td>
+            <td>{{ book.NumberOfPages}}</td>
+            <td style="width: 10%;">
+                <button [routerLink]="['/edit', book.Id]" class="btn btn-primary btn-sm float-end">Edit</button>
+            </td>
+            <td style="width: 10%;">
+                <button (click)="deleteBook(book.Id)" class="btn btn-danger btn-sm float-end">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="listBooks.length == 0" class="row mt-5">
+    <h5>No books to show</h5>
+</div>

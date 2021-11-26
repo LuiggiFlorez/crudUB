@@ -1,0 +1,35 @@
+		#### FRONT-END ####
+> ng new Project		y
+> cd Project
+> npm install bootstrap
+> npm install ngx-toastr --save
+# instalar bootstrap y toastr
+en angular.json, architect{ buiild{ styles{ agregar:
+"node_modules/bootstrap/dist/css/bootstrap.min.css", "node_modules/ngx-toastr/toastr.css"
+# crear componentes, servicios, interfaces
+Crear carpetas: components, services, interfaces
+> ng g c components/component
+> ng g s services/service
+> ng g i interfaces/interfaces
+		#### BACK-END ####
+Crear aplicacion Desarrollo Web.ASP.Net
+Crear carpeta Models y agregar Modelos como clase
+Agregar clase AplicationDbContext
+Actualizar contenido de launchSetting.json
+Si no existe crear carpeta Controllers. Agregar controladores API con acciones de lectura y Escritura
+Instalar paquetes:
+	Microsoft.EntityFrameworkCore -v 5.0.12
+	Microsoft.EntityFrameworkCore.Tools -v 5.0.12
+	Pomelo.EntityFrameworkCore.Mysql -v 5.03
+	Swashbuckle.AspNetCore -v 5.6.3
+Para generar migracion ir a la consola de herramientas
+> Add-Migration "InitialCreate"
+> Update-Database
+		#### INTEGRACION ####
+En el FrontEnd, configurar:
+	Modulo HttpClienteModule, Servicios y llamarlo en el componente
+En el BackEnd, configurar:
+	codigo ConfigureServices y en Configure en Startup
+
+
+https://www.youtube.com/watch?v=9dvha06lbgA

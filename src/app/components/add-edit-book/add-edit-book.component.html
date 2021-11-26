@@ -1,0 +1,33 @@
+<h3 class="mt-3">{{ action }} Book</h3>
+<form [formGroup]="addBook" (ngSubmit)="AddEditBook()">
+    <div class="mb-3">
+        <label for="Id" class="form-lab">Id</label>
+        <input formControlName="Id" type="text" class="form-control" id="Id">
+        <span class="text-danger" *ngIf="addBook.get('Id')?.invalid && addBook.get('Id')?.touched">
+             <strong>Id</strong> required
+        </span>
+    </div>
+    <div class="mb-3">
+        <label for="Title" class="form-lab">Title</label>
+        <input formControlName="Title" type="text" class="form-control" id="Title">
+        <span class="text-danger" *ngIf="addBook.get('Title')?.invalid && addBook.get('Title')?.touched">
+             <strong>Title</strong> required
+        </span>
+    </div>
+    <div class="mb-3">
+        <label for="Author" class="form-lab">Author</label>
+        <input formControlName="Author" type="text" class="form-control" id="Author">
+        <span class="text-danger" *ngIf="addBook.get('Author')?.invalid && addBook.get('Author')?.touched">
+             <strong>Author</strong> required
+        </span>
+    </div>
+    <div class="mb-3">
+        <label for="NumberOfPages" class="form-lab">NumberOfPages</label>
+        <input formControlName="NumberOfPages" class="form-control" id="NumberOfPages" >
+        <span class="text-danger" *ngIf="addBook.get('NumberOfPages')?.invalid && addBook.get('NumberOfPages')?.touched">
+             <strong>NumberOfPages</strong> required
+        </span>
+      </div>
+      <button type="submit" class="btn btn-primary float-end">Accept</button>
+      <button type="button" routerLink="/" class="btn btn-secondary">Back</button>
+</form>
